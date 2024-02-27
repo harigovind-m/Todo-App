@@ -37,62 +37,74 @@
 
     <!-- Page -->
     <div class="container-main flex flex-col self-center px-5 mt-8 w-full max-w-[1227px] max-md:max-w-full">
-    
-    <!-- User Welcome Title -->
+
+      <!-- User Welcome Title -->
       <div class="user-name-title self-center text-2xl font-medium text-white whitespace-nowrap">
         Welcome Back Akhil!
       </div>
-    
-    <!-- Tasks Subtitle   -->
+
+      <!-- Tasks Subtitle   -->
       <div class="task-subtitle mt-2 text-2xl font-medium text-white max-md:max-w-full">
         Tasks
       </div>
-    
-    <!-- Task Sorting   -->
+
+      <!-- Task Sorting   -->
       <div>
-        <div class="task-sort flex gap-5 justify-center self-start  font-normal text-white whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
-          <div class="justify-center px-5 py-3 rounded-2xl border transition duration-200 hover:text-slate hover:cursor-pointer hover:bg-orange-400 border-solid border-stone-600 max-md:px-5">
+        <div
+          class="task-sort flex gap-5 justify-center self-start  font-normal text-white whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
+          <div
+            class="justify-center px-5 py-3 rounded-2xl border transition duration-200 hover:text-slate hover:cursor-pointer hover:bg-orange-400 border-solid border-stone-600 max-md:px-5">
             All
           </div>
-          <div class="justify-center px-14 py-3 rounded-2xl transition duration-200 hover:text-slate cursor-pointer hover:bg-orange-400 border border-solid border-stone-600 max-md:px-5">
+          <div
+            class="justify-center px-14 py-3 rounded-2xl transition duration-200 hover:text-slate cursor-pointer hover:bg-orange-400 border border-solid border-stone-600 max-md:px-5">
             Assigned to Me
           </div>
-          <div class="justify-center px-14 py-3 rounded-2xl transition duration-200 hover:text-slate cursor-pointer hover:bg-orange-400 border border-solid border-stone-600 max-md:px-5">
+          <div
+            class="justify-center px-14 py-3 rounded-2xl transition duration-200 hover:text-slate cursor-pointer hover:bg-orange-400 border border-solid border-stone-600 max-md:px-5">
             Assigned by Me
           </div>
         </div>
       </div>
 
-    <!-- Second Subtitle   -->
+      <!-- Second Subtitle   -->
       <div class="task-head-row flex gap-5 justify-between self-center mt-9 w-full text-base text-white max-w-[1200px]">
         <button class="task-create-btn ">
-          <div class="justify-center px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50 hover:bg-orange-400 hover:text-slate transition duration-300 max-md:px-5">
+          <div
+            class="justify-center px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50 hover:bg-orange-400 hover:text-slate transition duration-300 max-md:px-5">
             Create New Task
           </div>
         </button>
-        <div class="flex flex-col flex-0 px-7 py-5 rounded-xl  bg-stone-600 bg-opacity-50">
-          <div class="flex gap-5 justify-end">
-            <div class="text-start w-52">Priority</div>
-            <div class="w-52">Created By</div>
-            <div class="w-52">Deadline</div>
-            <div class="text-end">Status</div>
-          </div>
+        <div class="flex flex-col flex-0 px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50">
+          <table class="w-full">
+            <thead>
+              <tr class="">
+                <th class="text-start font-medium w-48">Priority</th>
+                <th class="w-48 font-medium">Created By</th>
+                <th class="w-48 font-medium">Deadline</th>
+                <th class="w-48 font-medium text-end">Status</th>
+              </tr>
+            </thead>
+          </table>
         </div>
       </div>
 
-      
-      <div class="flex gap-5 justify-between items-center mt-11 text-xl tracking-normal text-white max-md:flex-wrap max-md:mt-10 max-md:mr-2 max-md:max-w-full">
-        <div class="self-stretch text-lg font-medium tracking-[4px]">
-          1•
-        </div>
-        <div class="flex-auto self-stretch text-3xl tracking-wider">
-          Landmark Opening ...
-        </div>
-        <div class="self-stretch my-auto text-red-600">High</div>
-        <div class="self-stretch my-auto">Me</div>
-        <div class="self-stretch my-auto">12/2/24</div>
-        <div class="self-stretch my-auto">In Progress</div>
+      <!-- Task Listing   -->
+      <div class="mt-11 max-md:flex-wrap max-md:mt-10 max-md:mr-2 max-md:max-w-full">
+        <table class="w-full text-xl tracking-normal text-white">
+          <tbody>
+            <tr class="flex gap-5 justify-between items-center">
+              <td class="text-lg font-normal tracking-[4px]">1•</td>
+              <td class="flex-auto">Landmark Opening ...</td>
+              <td class="text-red-600">High</td>
+              <td>Me</td>
+              <td>12/2/24</td>
+              <td>In Progress</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+
       <div
         class="flex gap-5 justify-between items-center mx-5 mt-10 text-xl tracking-normal text-white max-md:flex-wrap max-md:mr-2.5 max-md:max-w-full">
         <div class="self-start mt-2 text-lg font-medium tracking-[3.42px]">
