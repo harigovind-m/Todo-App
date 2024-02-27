@@ -15,30 +15,40 @@
   <div class="flex flex-col bg-slate">
 
     <!-- Navbar -->
-    <div class="flex justify-center items-center px-16 py-4 w-full text-3xl font-semibold max-md:font-medium text-orange-400 bg-gray-800 max-md:px-5 max-md:max-w-full">
-      <div class="navbar-content flex gap-5 justify-between px-0.5 w-full max-w-[1214px] max-md:flex-wrap max-md:max-w-full">
+    <div
+      class="flex justify-center items-center px-16 py-4 w-full text-3xl font-semibold max-md:font-medium text-orange-400 bg-gray-800 max-md:px-5 max-md:max-w-full">
+      <div
+        class="navbar-content flex gap-5 justify-between px-0.5 w-full max-w-[1214px] max-md:flex-wrap max-md:max-w-full">
         <div class="navbar-logo flex-auto">RP Tech</div>
         <div class="navbar-heading flex-auto flex-shrink-0">Todo List</div>
         <div class="navbar-profile flex gap-5 justify-center text-center text-xl text-white whitespace-nowrap">
-          <div class="navbar-user flex flex-col font-extralight text-sm hover:cursor-pointer transition duration-500 hover:text-green-400">
+          <div
+            class="navbar-user flex flex-col font-extralight text-sm hover:cursor-pointer transition duration-500 hover:text-green-400">
             <div>G0866</div>
             <div class="mt-1">Akhil Raj</div>
           </div>
-          <div class="navbar-logout">
-            <button class="bg-white mt-1 w-9 h-9 pl-1 rounded-md transition duration-300 hover:bg-red-600">
-              <i class="fa-solid fa-arrow-right-from-bracket self-start w-6 hover:cursor-pointer transition duration-300 text-red-600 hover:text-white" onclick="logout_Function()"></i>
-            </button>
+          <div class="logout icon pt-1">
+            <i class="fa-solid fa-arrow-right-from-bracket pt-2 w-9 h-9 pl-1 rounded-md transition duration-300 hover:cursor-pointer bg-white text-red-600 hover:text-white hover:bg-red-600"
+              onclick="logout_Function()"></i>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Page -->
     <div class="container-main flex flex-col self-center px-5 mt-8 w-full max-w-[1227px] max-md:max-w-full">
+    
+    <!-- User Welcome Title -->
       <div class="user-name-title self-center text-2xl font-medium text-white whitespace-nowrap">
         Welcome Back Akhil!
       </div>
+    
+    <!-- Tasks Subtitle   -->
       <div class="task-subtitle mt-2 text-2xl font-medium text-white max-md:max-w-full">
         Tasks
       </div>
+    
+    <!-- Task Sorting   -->
       <div>
         <div class="task-sort flex gap-5 justify-center self-start  font-normal text-white whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
           <div class="justify-center px-5 py-3 rounded-2xl border transition duration-200 hover:text-slate hover:cursor-pointer hover:bg-orange-400 border-solid border-stone-600 max-md:px-5">
@@ -52,25 +62,27 @@
           </div>
         </div>
       </div>
-      
-      <div
-        class="flex gap-5 justify-between self-center mt-9 w-full text-xl tracking-normal text-white max-w-[1042px] max-md:flex-wrap max-md:max-w-full">
-        <div class="justify-center px-10 py-5 whitespace-nowrap rounded-xl bg-stone-600 bg-opacity-50 max-md:px-5">
-          Create New Task
-        </div>
-        <div
-          class="flex flex-col flex-1 justify-center px-10 py-5 rounded-xl bg-stone-600 bg-opacity-50 max-md:px-5 max-md:max-w-full">
-          <div class="flex gap-5 justify-between max-md:flex-wrap max-md:max-w-full">
-            <div>Priority</div>
-            <div>Created By</div>
-            <div>Deadline</div>
-            <div>Status</div>
+
+    <!-- Second Subtitle   -->
+      <div class="task-head-row flex gap-5 justify-between self-center mt-9 w-full text-base text-white max-w-[1200px]">
+        <button class="task-create-btn ">
+          <div class="justify-center px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50 hover:bg-orange-400 hover:text-slate transition duration-300 max-md:px-5">
+            Create New Task
+          </div>
+        </button>
+        <div class="flex flex-col flex-0 px-7 py-5 rounded-xl  bg-stone-600 bg-opacity-50">
+          <div class="flex gap-5 justify-end">
+            <div class="text-start w-52">Priority</div>
+            <div class="w-52">Created By</div>
+            <div class="w-52">Deadline</div>
+            <div class="text-end">Status</div>
           </div>
         </div>
       </div>
-      <div
-        class="flex gap-5 justify-between items-center mt-11 text-xl tracking-normal text-white max-md:flex-wrap max-md:mt-10 max-md:mr-2 max-md:max-w-full">
-        <div class="self-stretch my-auto text-lg font-medium tracking-[3.23px]">
+
+      
+      <div class="flex gap-5 justify-between items-center mt-11 text-xl tracking-normal text-white max-md:flex-wrap max-md:mt-10 max-md:mr-2 max-md:max-w-full">
+        <div class="self-stretch text-lg font-medium tracking-[4px]">
           1•
         </div>
         <div class="flex-auto self-stretch text-3xl tracking-wider">
