@@ -1,7 +1,6 @@
 {
   "name": "rp-tech-todo",
   "version": "1.0.0",
-  "description": "",
   "main": "tailwind.config.js",
   "scripts": {
     "build-css": "tailwindcss build src/style.css -o public/styles.css"
@@ -19,5 +18,6 @@
   "homepage": "https://github.com/harigovind-m/Todo-App#readme",
   "dependencies": {
     "tailwindcss": "^3.4.3"
-  }
+  },
+  "description": ""
 }
