@@ -69,14 +69,14 @@
             Create New Task
           </div>
         </button>
-        <div class="flex flex-col flex-0 px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50">
-          <table class="w-full">
+        <div class="px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50">
+          <table>
             <thead>
-              <tr>
-                <th class="text-start font-medium w-48">Priority</th>
-                <th class="w-48 font-medium">Created By</th>
-                <th class="w-48 font-medium">Deadline</th>
-                <th class="w-48 font-medium text-end">Status</th>
+              <tr class="flex justify-between w-custom_w1">
+                <th class="font-medium">Priority</th>
+                <th class="font-medium">Created By</th>
+                <th class="font-medium">Deadline</th>
+                <th class="font-medium">Status</th>
               </tr>
             </thead>
           </table>
@@ -84,16 +84,25 @@
       </div>
 
       <!-- Task Listing   -->
-      <div class="mt-11 max-md:flex-wrap max-md:mt-10 max-md:mr-2 max-md:max-w-full">
-        <table class="w-full text-xl tracking-normal text-white">
-          <tbody>
-            <tr class="">
-              <td class="text-base font-normal">1•</td>
-              <td class="flex-auto">Landmark Opening ...</td>
-              <td class="w-48 text-red-600">High</td>
-              <td class="w-48">Me</td>
-              <td class="w-48">12/2/24</td>
-              <td class="w-48 text-end text-orange-400">In Progress</td>
+      <div class="mt-10 mb-5">
+        <table class="w-full text-lg tracking-normal text-white text-center">
+          <tbody class="flex">
+            <tr>
+              <td class="text-base font-normal flex w-custom_w">
+                <div class="flex items-center">
+                  1.
+                </div>
+                <div class="text-xl tracking-normal ml-3">
+                  Landmark Opening ...
+                </div>
+              </td>
+            </tr>
+            <tr class="w-[866px] flex justify-between px-5">
+                <td class="w-40 text-start text-red-600">High</td>
+                <td class="w-56">Bhasheer</td>
+                <td class="w-56">12/2/24</td>
+                <td class="w-40 text-end text-orange-400">In Progress</td>
+              
             </tr>
           </tbody>
         </table>
@@ -161,6 +170,10 @@
           colors: {
             slate: 'rgb(38, 57, 69)',
             logout_red: "rgb(179, 13, 13)",
+          },
+          width: {
+            custom_w: "325px",
+            custom_w1: "810px"
           },
         },
       },
