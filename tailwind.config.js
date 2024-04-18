@@ -4,7 +4,6 @@ module.exports = {
       colors: {
         slate: 'rgb(38, 57, 69)',
       },
-      
     },
   },
   variants: {},
