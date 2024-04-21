@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        slate: "#263945",
+        slate: 'rgb(38, 57, 69)',
       },
     },
   },

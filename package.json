@@ -1,0 +1,23 @@
+{
+  "name": "rp-tech-todo",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build-css": "tailwindcss build src/style.css -o public/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harigovind-m/Todo-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harigovind-m/Todo-App/issues"
+  },
+  "homepage": "https://github.com/harigovind-m/Todo-App#readme",
+  "dependencies": {
+    "tailwindcss": "^3.4.3"
+  },
+  "description": ""
+}
