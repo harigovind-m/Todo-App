@@ -11,205 +11,212 @@
   <script src="https://kit.fontawesome.com/3280a7d2eb.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="bg-slate min-h-screen">
 
-  <div class="flex flex-col bg-slate">
+  <div class="flex flex-col min-h-screen">
 
-    <!-- Navbar -->
-    <div class="flex justify-center items-center px-16 py-4 w-full text-3xl font-semibold max-md:font-medium text-orange-400 bg-gray-800 max-md:px-5 max-md:max-w-full">
-      <div class="navbar-content flex gap-5 justify-between px-0.5 w-full max-w-[1214px] max-md:flex-wrap max-md:max-w-full">
-        <div class="navbar-logo flex-auto">RP Tech</div>
-        <div class="navbar-heading flex-auto flex-shrink-0">Todo List</div>
-        <div class="navbar-profile flex gap-5 justify-center text-center text-xl text-white whitespace-nowrap">
-          <div class="navbar-user flex flex-col font-extralight text-sm hover:cursor-pointer transition duration-450 hover:text-green-400">
-            <div>G0866</div>
-            <div class="mt-1">Akhil Raj</div>
+      <!-- Navbar -->
+      <div class="flex justify-center items-center px-16 py-4 w-full text-3xl font-semibold max-md:font-medium text-orange-400 bg-gray-800 max-md:px-5 max-md:max-w-full">
+          <div class="navbar-content flex gap-5 justify-between px-0.5 w-full max-w-[1214px] max-md:flex-wrap max-md:max-w-full">
+              <div class="navbar-logo flex-auto">RP Tech</div>
+              <div class="navbar-heading flex-auto flex-shrink-0">Todo List</div>
+              <div class="navbar-profile flex gap-5 justify-center text-center text-xl text-white whitespace-nowrap">
+                  <div class="navbar-user flex flex-col font-extralight text-sm hover:cursor-pointer transition duration-450 hover:text-green-400">
+                      <span>G0866</span>
+                      <span class="mt-1">Akhil Raj</span>
+                  </div>
+                  <div class="logout_icon pt-1">
+                      <i class="fa-solid fa-arrow-right-from-bracket pt-2 w-9 h-9 pl-1 rounded-md transition duration-300 hover:cursor-pointer bg-white text-red-600 hover:text-white hover:bg-red-600" onclick="logout_Function()"></i>
+                  </div>
+              </div>
           </div>
-          <div class="logout_icon pt-1">
-            <i class="fa-solid fa-arrow-right-from-bracket pt-2 w-9 h-9 pl-1 rounded-md transition duration-300 hover:cursor-pointer bg-white text-red-600 hover:text-white hover:bg-red-600"
-              onclick="logout_Function()"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Page -->
-    <div class="container-main flex flex-col self-center px-5 mt-8 w-full max-w-[1227px] max-md:max-w-full">
-
-      <!-- User Welcome Title -->
-      <div class="user-name-title self-center text-2xl font-medium text-white whitespace-nowrap">
-        Welcome Back Akhil!
       </div>
 
-      <!-- Tasks Subtitle   -->
-      <div class="task-subtitle mt-2 text-2xl font-medium text-white max-md:max-w-full">
-        Tasks
-      </div>
+      <!-- Page -->
+      <div class="container-main flex flex-col self-center px-5 mt-8 w-full max-w-[1227px] max-md:max-w-full">
 
-      <!-- Task Sorting   -->
-      <div>
-        <div class="task-sort flex gap-5 justify-center self-start  font-normal text-white whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
-          <div class="justify-center px-5 py-3 rounded-2xl border transition duration-200 hover:text-slate hover:cursor-pointer hover:bg-orange-400 border-solid border-stone-600 max-md:px-5">
-            All
+          <!-- User Welcome Title -->
+          <div class="user-name-title self-center text-2xl font-medium text-white whitespace-nowrap">
+              Welcome Back Akhil!
           </div>
-          <div
-            class="justify-center px-14 py-3 rounded-2xl transition duration-200 hover:text-slate cursor-pointer hover:bg-orange-400 border border-solid border-stone-600 max-md:px-5">
-            Assigned to Me
-          </div>
-          <div
-            class="justify-center px-14 py-3 rounded-2xl transition duration-200 hover:text-slate cursor-pointer hover:bg-orange-400 border border-solid border-stone-600 max-md:px-5">
-            Assigned by Me
-          </div>
-        </div>
-      </div>
 
-      <!-- Second Subtitle   -->
-      <div class="task-head-row flex gap-5 justify-between self-center mt-9 w-full text-base text-white max-w-[1200px]">
-        <button class="task-create-btn ">
-          <div class="justify-center px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50 hover:bg-orange-400 hover:text-slate transition duration-300 max-md:px-5">
-            Create New Task
+          <!-- Tasks Subtitle   -->
+          <div class="task-subtitle mt-2 text-2xl font-medium text-white max-md:max-w-full">
+              Tasks
           </div>
-        </button>
-        <div class="px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50">
-          <table>
-            <thead>
-              <tr class="flex justify-between w-custom_w1">
-                <th class="font-medium">Priority</th>
-                <th class="font-medium">Created By</th>
-                <th class="font-medium">Deadline</th>
-                <th class="font-medium">Status</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
 
-      <!-- Task Listing   -->
-      <div class="mt-5 mb-5 rounded-r-lg py-5 rounded-lg hover:shadow-2xl transition duration-300 hover:cursor-pointer">
-        <table class="w-full text-lg tracking-normal text-white text-center">
-          <tbody class="flex">
-            <tr>
-              <td class=" font-normal flex w-custom_w pl-5">
-                <div class="flex items-center  tracking-wide">
-                  <span class="text-base">1 &CenterDot;</span>
-                </div>
-                <div class="text-xl tracking-normal ml-3">
-                  Landmark Opening
-                </div>
-              </td>
-            </tr>
-            <tr class="w-[866px] flex justify-between px-5">
-              <td class="w-36 text-start text-red-600">High</td>
-              <td class="w-60">Sudharshan</td>
-              <td class="w-56">12/2/24</td>
-              <td class="w-36 text-end text-orange-400">
-                In Progress
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+          <!-- Task Sorting   -->
+          <div>
+              <div class="task-sort flex gap-5 justify-center self-start font-normal text-white whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
+                  <div class="justify-center px-5 py-3 rounded-2xl border transition duration-200 hover:text-slate hover:cursor-pointer hover:bg-orange-400 border-solid border-stone-600 max-md:px-5">
+                      All
+                  </div>
+                  <div class="justify-center px-14 py-3 rounded-2xl transition duration-200 hover:text-slate cursor-pointer hover:bg-orange-400 border border-solid border-stone-600 max-md:px-5">
+                      Assigned to Me
+                  </div>
+                  <div class="justify-center px-14 py-3 rounded-2xl transition duration-200 hover:text-slate cursor-pointer hover:bg-orange-400 border border-solid border-stone-600 max-md:px-5">
+                      Assigned by Me
+                  </div>
+              </div>
+          </div>
 
-      <div class="flex flex-col items-center pb-5 rounded-2xl bg-gray-800 bg-opacity-90 max-md:px-5 max-md:max-w-full">
-        <div class="flex gap-5 justify-between self-stretch max-md:flex-wrap max-md:max-w-full">
-          <div class="flex flex-col flex-1 max-md:max-w-full">
-            <div class="rounded-r-lg py-5 rounded-lg">
+          <!-- Second Subtitle   -->
+          <div class="task-head-row my-5 flex gap-5 justify-between self-center mt-9 w-full text-base text-white max-w-[1200px]">
+              <button class="task-create-btn ">
+                  <div class="justify-center px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50 hover:bg-orange-400 hover:text-slate transition duration-300 max-md:px-5">
+                      Create New Task
+                  </div>
+              </button>
+              <div class="px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50">
+                  <table>
+                      <thead>
+                          <tr class="flex justify-between w-custom_w1">
+                              <th class="font-medium">Priority</th>
+                              <th class="font-medium">Created By</th>
+                              <th class="font-medium">Deadline</th>
+                              <th class="font-medium">Status</th>
+                          </tr>
+                      </thead>
+                  </table>
+              </div>
+          </div>
+
+          <!-- Task Listing -->
+          <div id="task-list" class="mb-5 rounded-r-lg py-5 rounded-lg hover:shadow-2xl transition duration-300 hover:cursor-pointer">
               <table class="w-full text-lg tracking-normal text-white text-center">
-                <tbody class="flex">
-                  <tr>
-                    <td class=" font-normal flex w-custom_w pl-5">
-                      <div class="flex items-center  tracking-wide">
-                        <span class="text-base">1 &CenterDot;</span>
-                      </div>
-                      <div class="text-xl tracking-normal ml-3">
-                        Landmark Opening
-                      </div>
-                    </td>
-                  </tr>
-                  <tr class="w-[866px] flex justify-between px-5">
-                    <td class="w-36 text-start text-red-600">High</td>
-                    <td class="w-60">Me</td>
-                    <td class="w-56">12/2/24</td>
-                    <td class="w-36 text-end text-orange-400">
-                      In Progress
-                    </td>
-                  </tr>
-                </tbody>
+                  <tbody class="flex">
+                      <tr>
+                          <td class="font-normal flex w-custom_w pl-5">
+                              <div class="flex items-center tracking-wide">
+                                  <span class="text-base">1 &CenterDot;</span>
+                              </div>
+                              <div class="text-xl tracking-normal ml-3">
+                                  Landmark Opening
+                              </div>
+                          </td>
+                      </tr>
+                      <tr class="w-[866px] flex justify-between px-5">
+                          <td class="w-36 text-start text-red-600">High</td>
+                          <td class="w-60">Sudharshan</td>
+                          <td class="w-56">12/2/24</td>
+                          <td class="w-36 text-end text-orange-400">
+                              In Progress
+                          </td>
+                      </tr>
+                  </tbody>
               </table>
+          </div>
+
+          <!-- Task Listing Expanded -->
+          <div id="task-list-expanded" class="hidden">
+            <div class="flex flex-col items-center pb-5 rounded-2xl bg-gray-800">
+          <div class="flex flex-col flex-1 rounded-r-lg py-5 rounded-lg">
+            <table class="w-full text-lg tracking-normal text-white text-center">
+              <tbody class="flex">
+                <tr>
+                  <td class=" font-normal flex w-custom_w pl-5">
+                    <div class="flex items-center  tracking-wide">
+                      <span class="text-base">1 &CenterDot;</span>
+                    </div>
+                    <div class="text-xl tracking-normal ml-3">
+                      Landmark Opening
+                    </div>
+                  </td>
+                </tr>
+                <tr class="w-[866px] flex justify-between px-5">
+                  <td class="w-36 text-start text-red-600">High</td>
+                  <td class="w-60">Me</td>
+                  <td class="w-56">12/2/24</td>
+                  <td class="w-36 text-end text-orange-400">
+                    In Progress
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+  
+          <!-- Assign To Button & Progress Bar -->
+          <div class="flex w-[650px] px-5 self-end justify-between items-center">
+            <div class="px-10 py-2 font-medium tracking-normal text-white rounded-md bg-stone-600">
+              Assigned to
+            </div>
+  
+            <!-- Progress Bar -->
+            <div class="w-[200px] bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+              <div class="bg-lime-600 h-2.5 rounded-full" style="width: 45%"></div>
+              <div class="text-sm font-medium text-lime-600 dark:text-white">45%</div>
             </div>
           </div>
-        </div>
-
-        <!-- Assign To Button & Progress Bar -->
-        <div class="flex w-[650px] px-5 self-end justify-between items-center">
-          <div class="px-10 py-2 font-medium tracking-normal text-white rounded-md bg-stone-600">
-            Assigned to
+  
+          <div class="py-5 rounded-lg">
+            <table class="w-full text-lg tracking-normal text-white text-center">
+              <tbody class="flex">
+                <tr>
+                  <td class=" font-normal flex w-custom_w pl-10 text-stone-300">
+                    <div class="flex items-center tracking-wide">
+                      <span class="text-base">-</span>
+                    </div>
+                    <div class="text-lg tracking-normal ml-3">
+                      Landmark Opening and Design flyer for promotion
+                    </div>
+                  </td>
+                </tr>
+                <tr class="w-[866px] flex justify-between px-5">
+                  <td class="w-36 text-start text-red-600">High</td>
+                  <td class="w-60 text-stone-300">Sudharshan</td>
+                  <td class="w-56 text-stone-300 text-lg">12/2/24</td>
+                  <td class="w-36 text-end text-orange-400">
+                    In Progress
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-
-          <!-- Progress Bar -->
-          <div class="w-[200px] bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-            <div class="bg-lime-600 h-2.5 rounded-full" style="width: 45%"></div>
-            <div class="text-sm font-medium text-lime-600 dark:text-white">45%</div>
+          <div class="rounded-r-lg py-5 rounded-lg">
+            <table class="w-full text-lg tracking-normal text-white text-center">
+              <tbody class="flex">
+                <tr>
+                  <td class=" font-normal flex w-custom_w pl-10 text-stone-300">
+                    <div class="flex items-center tracking-wide">
+                      <span class="text-base">-</span>
+                    </div>
+                    <div class="text-lg tracking-normal ml-3">
+                      Landmark Opening and Design flyer for promotion
+                    </div>
+                  </td>
+                </tr>
+                <tr class="w-[866px] flex justify-between px-5">
+                  <td class="w-36 text-start text-red-600">High</td>
+                  <td class="w-60 text-stone-300">Sudharshan</td>
+                  <td class="w-56 text-stone-300 text-lg">12/2/24</td>
+                  <td class="w-36 text-end text-orange-400">
+                    In Progress
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+  
+          <!-- Delete Button -->
+          <div class="justify-center">
+            <button class="m-1">
+              <i
+                class="fa-sharp fa-solid fa-trash-can px-5 py-2.5 text-xl tracking-normal text-red-600 bg-white hover:text-white hover:bg-red-600 transition duration-300 rounded-md"></i>
+            </button>
+            <button id="close_button" class="m-1">
+              <i class="fa-solid fa-circle-xmark px-5 py-2.5 text-xl tracking-normal text-slate bg-white hover:text-slate hover:bg-orange-400 transition duration-300 rounded-md"></i>
+            </button>
           </div>
         </div>
-
-        <div class="py-5 rounded-lg">
-          <table class="w-full text-lg tracking-normal text-white text-center">
-            <tbody class="flex">
-              <tr>
-                <td class=" font-normal flex w-custom_w pl-10 text-stone-300">
-                  <div class="flex items-center tracking-wide">
-                    <span class="text-base">-</span>
-                  </div>
-                  <div class="text-lg tracking-normal ml-3">
-                    Landmark Opening and Design flyer for promotion
-                  </div>
-                </td>
-              </tr>
-              <tr class="w-[866px] flex justify-between px-5">
-                <td class="w-36 text-start text-red-600">High</td>
-                <td class="w-60 text-stone-300">Sudharshan</td>
-                <td class="w-56 text-stone-300 text-lg">12/2/24</td>
-                <td class="w-36 text-end text-orange-400">
-                  In Progress
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="rounded-r-lg py-5 rounded-lg">
-          <table class="w-full text-lg tracking-normal text-white text-center">
-            <tbody class="flex">
-              <tr>
-                <td class=" font-normal flex w-custom_w pl-10 text-stone-300">
-                  <div class="flex items-center tracking-wide">
-                    <span class="text-base">-</span>
-                  </div>
-                  <div class="text-lg tracking-normal ml-3">
-                    Landmark Opening and Design flyer for promotion
-                  </div>
-                </td>
-              </tr>
-              <tr class="w-[866px] flex justify-between px-5">
-                <td class="w-36 text-start text-red-600">High</td>
-                <td class="w-60 text-stone-300">Sudharshan</td>
-                <td class="w-56 text-stone-300 text-lg">12/2/24</td>
-                <td class="w-36 text-end text-orange-400">
-                  In Progress
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Delete Button -->
-        <div class="justify-center ">
-          <i class="fa-sharp fa-solid fa-trash-can px-5 py-2.5 text-xl tracking-normal text-red-600 whitespace-nowrap bg-white hover:text-white hover:bg-red-600 hover:cursor-pointer transition duration-300 rounded-md max-md:pr-5"></i>
-        </div>
+          </div>
       </div>
-    </div>
-    <div class="mt-44 w-full min-h-[7px] max-md:mt-10 max-md:max-w-full"></div>
   </div>
+
+  <!-- Copyright Footer -->
+  <footer class="sticky bottom-0 bg-gray-800 h-[75px] flex w-full text-orange-400 text-center font-semibold tracking-wide justify-center items-center">
+      <i class="fa fa-copyright m-2" aria-hidden="true"></i>
+      <span>Developer On Board</span>
+  </footer>
 
   <script>
     tailwind.config = {
@@ -228,6 +235,21 @@
       variants: {},
       plugins: [],
     }
+
+    document.getElementById('task-list').addEventListener('click', function () {
+      var taskList = document.getElementById('task-list');
+      var expandedSection = document.getElementById('task-list-expanded');
+      taskList.classList.toggle('hidden');
+      expandedSection.classList.toggle('hidden');
+    });
+
+    document.getElementById('close_button').addEventListener('click', function () {
+      var taskList = document.getElementById('task-list');
+      var expandedSection = document.getElementById('task-list-expanded');
+      taskList.classList.toggle('hidden');
+      expandedSection.classList.toggle('hidden');
+    });
+
   </script>
 
   <style>
