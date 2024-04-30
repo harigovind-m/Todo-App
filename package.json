@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/harigovind-m/Todo-App#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
     "tailwindcss": "^3.4.3"
   },
   "description": ""
