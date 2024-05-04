@@ -55,17 +55,12 @@
       </div>
 
       <!-- Second Subtitle -->
-      <div class="task-head-row my-5 flex gap-5 justify-between self-center mt-9 w-full text-base text-white max-w-[1200px]">
-        <button class="task-create-btn ">
-          <div
-            class="justify-center px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50 hover:bg-orange-400 hover:text-slate transition duration-300 max-md:px-5">
-            Create New Task
-          </div>
-        </button>
+      <div class="task-head-row my-5 flex gap-5 justify-end mt-9 w-full text-base text-white max-w-[1200px]">
+
         <div class="px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50">
           <table>
             <thead>
-              <tr class="flex justify-between w-custom_w1">
+              <tr class="flex justify-around w-custom_w1">
                 <th class="font-medium">Priority</th>
                 <th class="font-medium">Created By</th>
                 <th class="font-medium">Deadline</th>
@@ -82,67 +77,28 @@
           <table class="w-full text-lg tracking-normal text-white text-center">
             <tbody class="flex">
               <tr>
-                <td class="font-normal flex w-custom_w pl-3">
+                <td class="font-normal flex w-[325px] pl-3">
                   <div class="text-sm tracking-normal ml-3 items-center">
                     <input type="text" placeholder="Enter your task here" class="py-2 w-[250px] pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
                   </div>
                 </td>
               </tr>
-              <tr class="w-[866px] flex justify-between px-5">
-                <td class="w-36 text-start text-red-600">
+              <tr class="w-[866px] flex justify-around px-5">
+                <td class="w-40 text-red-600">
                   <button onclick="openModal('modelConfirm')">
                     High
                   </button>
 
-                  <!-- Dialog Box -->
-                  <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
-                    <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
-                  
-                      <!-- Close button -->
-                      <div class="flex justify-end p-2 bg-gray-900">
-                        <button onclick="closeModal('modelConfirm')" type="button"
-                          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 transition duration-450 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
-                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                              clip-rule="evenodd"></path>
-                          </svg>
-                        </button>
-                      </div>
-                  
-                      <!-- Task Status Menu -->
-                      <div class="p-6 pt-0 text-center bg-slate">
-                        <div class="task_Status py-3">
-                          <button
-                            class="py-2 w-36 rounded-lg bg-lime-600 text-white hover:bg-lime-800 transition duration-450">Completed</button>
-                        </div>
-                        <div class="task_Status py-3">
-                          <button class="py-2 w-36 rounded-lg bg-orange-400 text-white hover:bg-orange-600 transition duration-450">In
-                            Progress</button>
-                        </div>
-                        <div class="task_Status py-3 pb-5">
-                          <button
-                            class="py-2 w-36 rounded-lg bg-red-600 hover:bg-red-800 text-white transition duration-450">Pending</button>
-                        </div>
-                        <a href="#" onclick="closeModal('modelConfirm')"
-                          class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg transition duration-450 text-base inline-flex items-center px-3 py-2.5 text-center mr-2">
-                          Yes, I'm sure
-                        </a>
-                        <a href="#" onclick="closeModal('modelConfirm')"
-                          class="text-gray-900 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-cyan-200 border border-gray-200 font-medium inline-flex items-center rounded-lg text-base px-3 py-2.5 text-center"
-                          data-modal-toggle="delete-user-modal">
-                          No, cancel
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
                 </td>
-                <td class="w-60">Me</td>
-                <td class="w-36">12/2/24</td>
-                <td class="w-44 text-end text-orange-400">
+                <td class="w-40">Me</td>
+                <td class="">
                   <div class="text-sm tracking-normal ml-3 items-center">
-                    <input type="text" placeholder="ID" class="py-2 w-44 pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
+                    <input type="date" placeholder="" class="py-2 pl-2 bg-gray-800 border-b border-gray-300 rounded-lg">
+                  </div>
+                </td>
+                <td class="text-end text-orange-400">
+                  <div class="text-sm tracking-normal ml-3 items-center">
+                    <input type="text" placeholder="ID" class="py-2 pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
                   </div>
                 </td>
               </tr>
@@ -161,61 +117,77 @@
           </button>
         </div>
 
-        <div class="py-5 rounded-lg">
+        <!-- Sub-Tasks -->
+        <div class="flex flex-col flex-1 rounded-r-lg py-5 rounded-lg">
           <table class="w-full text-lg tracking-normal text-white text-center">
             <tbody class="flex">
               <tr>
-                <td class=" font-normal flex w-custom_w pl-10 text-stone-300">
-                  <div class="flex items-center tracking-wide">
-                    <span class="text-base">-</span>
-                  </div>
-                  <div class="text-lg tracking-normal ml-3">
-                    Landmark Opening and Design flyer for promotion
+                <td class="font-normal flex justify-end w-[325px] pl-3">
+                  <div class="text-sm tracking-normal ml-3 items-center">
+                    <input type="text" placeholder="Enter your task here" class="py-2 w-[250px] pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
                   </div>
                 </td>
               </tr>
-              <tr class="w-[866px] flex justify-between px-5">
-                <td class="w-36 text-start text-red-600">
-                  High
-                </td>
-                <td class="w-60 text-stone-300">Sudharshan</td>
-                <td class="w-56 text-stone-300 text-lg">12/2/24</td>
-                <td class="w-36 text-end text-orange-400">
-                  <button>
-                    In Progress
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="rounded-r-lg py-5 rounded-lg">
-          <table class="w-full text-lg tracking-normal text-white text-center">
-            <tbody class="flex">
-              <tr>
-                <td class=" font-normal flex w-custom_w pl-10 text-stone-300">
-                  <div class="flex items-center tracking-wide">
-                    <span class="text-base">-</span>
-                  </div>
-                  <div class="text-lg tracking-normal ml-3">
-                    Landmark Opening and Design flyer for promotion
-                  </div>
-                </td>
-              </tr>
-              <tr class="w-[866px] flex justify-between px-5">
-                <td class="w-36 text-start text-red-600">High</td>
-                <td class="w-60 text-stone-300">Sudharshan</td>
-                <td class="w-56 text-stone-300 text-lg">12/2/24</td>
-                <td class="w-36 text-end text-orange-400">
+              <tr class="w-[866px] flex justify-around px-5">
+                <td class="w-40 text-red-600">
                   <button onclick="openModal('modelConfirm')">
-                    In Progress
+                    High
                   </button>
+
+                </td>
+                <td class="w-40">Me</td>
+                <td class="">
+                  <div class="text-sm tracking-normal ml-3 items-center">
+                    <input type="date" placeholder="" class="py-2 pl-2 bg-gray-800 border-b border-gray-300 rounded-lg">
+                  </div>
+                </td>
+                <td class="text-end text-orange-400">
+                  <div class="text-sm tracking-normal ml-3 items-center">
+                    <input type="text" placeholder="ID" class="py-2 pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
+                  </div>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
 
+      </div>
+
+      <!-- Dialog Box -->
+      <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
+        <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
+      
+          <!-- Close button -->
+          <div class="flex justify-end p-2 bg-gray-900">
+            <button onclick="closeModal('modelConfirm')" type="button"
+              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 transition duration-450 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+      
+          <!-- Task Status Menu -->
+          <div class="p-6 py-0 text-center bg-slate">
+            <div class="task_Status py-3">
+              <button class="py-2 w-36 rounded-lg bg-lime-600 text-white hover:bg-lime-800 transition duration-450">
+                Normal
+              </button>
+            </div>
+            <div class="task_Status py-3">
+              <button class="py-2 w-36 rounded-lg bg-orange-400 text-white hover:bg-orange-600 transition duration-450">
+                Medium
+              </button>
+            </div>
+            <div class="task_Status py-3 pb-5">
+              <button class="py-2 w-36 rounded-lg bg-red-600 hover:bg-red-800 text-white transition duration-450">
+                High
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -272,6 +244,12 @@
       plugins: [],
     }
   </script>
+
+  <style>
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+    }
+  </style>
 
 </body>
 
