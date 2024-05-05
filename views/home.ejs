@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="shortcut icon" href="//rptech.qa/cdn/shop/files/favicon_32x32.png?v=1657849654" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/3280a7d2eb.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-slate min-h-screen">
+
+  <div class="flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <div
+      class="flex justify-center items-center px-16 py-4 w-full text-3xl font-semibold max-md:font-medium text-orange-400 bg-gray-800 max-md:px-5 max-md:max-w-full">
+      <div
+        class="navbar-content flex gap-5 justify-between px-0.5 w-full max-w-[1214px] max-md:flex-wrap max-md:max-w-full">
+        <div class="navbar-logo flex-auto">RP Tech</div>
+        <div class="navbar-heading flex-auto flex-shrink-0">Todo List</div>
+        <div class="navbar-profile flex gap-5 justify-center text-center text-xl text-white whitespace-nowrap">
+          <div
+            class="navbar-user flex flex-col font-extralight text-sm hover:cursor-pointer transition duration-450 hover:text-green-400">
+            <span>G0866</span>
+            <span class="mt-1">Akhil Raj</span>
+          </div>
+          <div class="logout_icon pt-1">
+            <i class="fa-solid fa-arrow-right-from-bracket pt-2 w-9 h-9 pl-1 rounded-md transition duration-300 hover:cursor-pointer bg-white text-red-600 hover:text-white hover:bg-red-600"
+              onclick="logout_Function()"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page -->
+    <div class="container-main flex flex-col self-center px-5 mt-8 w-full max-w-[1227px] max-md:max-w-full">
+
+      <!-- User Welcome Title -->
+      <div class="user-name-title self-center text-2xl font-medium text-white whitespace-nowrap">
+        Welcome Back Akhil!
+      </div>
+
+      <!-- Tasks Subtitle   -->
+      <div class="task-subtitle mt-2 text-2xl font-medium text-white max-md:max-w-full">
+        Tasks
+      </div>
+
+      <!-- Task Sorting   -->
+      <div>
+        <div
+          class="task-sort flex gap-5 justify-center self-start font-normal text-white whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
+          <div
+            class="justify-center px-5 py-3 rounded-2xl border transition duration-200 hover:text-slate hover:cursor-pointer hover:bg-orange-400 border-solid border-stone-600 max-md:px-5">
+            All
+          </div>
+          <div
+            class="justify-center px-14 py-3 rounded-2xl transition duration-200 hover:text-slate cursor-pointer hover:bg-orange-400 border border-solid border-stone-600 max-md:px-5">
+            Assigned to Me
+          </div>
+          <div
+            class="justify-center px-14 py-3 rounded-2xl transition duration-200 hover:text-slate cursor-pointer hover:bg-orange-400 border border-solid border-stone-600 max-md:px-5">
+            Assigned by Me
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Subtitle   -->
+      <div class="task-head-row my-5 flex gap-5 justify-between self-center mt-9 w-full text-base text-white max-w-[1200px]">
+        <button class="task-create-btn" >
+          <a href="/create-task" class="justify-center px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50 hover:bg-orange-400 hover:text-slate transition duration-300 max-md:px-5">
+            Create New Task
+          </a>
+        </button>
+        <div class="px-7 py-5 rounded-xl bg-stone-600 bg-opacity-50">
+          <table>
+            <thead>
+              <tr class="flex justify-between w-custom_w1">
+                <th class="font-medium">Priority</th>
+                <th class="font-medium">Created By</th>
+                <th class="font-medium">Deadline</th>
+                <th class="font-medium">Status</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+
+      <!-- Task Listing -->
+      <div id="task-list"
+        class="mb-5 rounded-r-lg py-5 rounded-lg hover:shadow-2xl transition duration-300 hover:cursor-pointer">
+        <table class="w-full text-lg tracking-normal text-white text-center">
+          <tbody class="flex">
+            <tr>
+              <td class="font-normal flex w-custom_w pl-5">
+                <div class="flex items-center tracking-wide">
+                  <span class="text-base">1 &CenterDot;</span>
+                </div>
+                <div class="text-xl tracking-normal ml-3">
+                  Landmark Opening
+                </div>
+              </td>
+            </tr>
+            <tr class="w-[866px] flex justify-between px-5">
+              <td class="w-36 text-start text-lime-600">Normal</td>
+              <td class="w-60">Sudharshan</td>
+              <td class="w-56">12/2/24</td>
+              <td class="w-36 text-end text-orange-400">
+                In Progress
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Task Listing Expanded -->
+      <div id="task-list-expanded" class="hidden">
+        <div class="flex flex-col items-center mb-3 pb-5 rounded-2xl bg-gray-800">
+          <div class="flex flex-col flex-1 rounded-r-lg py-5 rounded-lg">
+            <table class="w-full text-lg tracking-normal text-white text-center">
+              <tbody class="flex">
+                <tr>
+                  <td class=" font-normal flex w-custom_w pl-5">
+                    <div class="flex items-center  tracking-wide">
+                      <span class="text-base">1 &CenterDot;</span>
+                    </div>
+                    <div class="text-xl tracking-normal ml-3">
+                      Landmark Opening
+                    </div>
+                  </td>
+                </tr>
+                <tr class="w-[866px] flex justify-between px-5">
+                  <td class="w-36 text-start text-red-600">High</td>
+                  <td class="w-60">Me</td>
+                  <td class="w-56">12/2/24</td>
+                  <td class="w-36 text-end text-orange-400">
+                    <button class="cursor-pointer" onclick="openModal('modelConfirm')">
+                      In Progress
+                    </button>
+                  
+                    <div id="modelConfirm"
+                      class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
+                      <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
+                  
+                        <!-- Close button -->
+                        <div class="flex justify-end p-2 bg-gray-900">
+                          <button onclick="closeModal('modelConfirm')" type="button"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 transition duration-450 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                            </svg>
+                          </button>
+                        </div>
+                  
+                        <!-- Task Status Menu -->
+                        <div class="p-6 pt-0 text-center bg-slate">
+                          <div class="task_Status py-3">
+                            <button class="py-2 w-36 rounded-lg bg-lime-600 text-white hover:bg-lime-800 transition duration-450">Completed</button>
+                          </div>
+                          <div class="task_Status py-3">
+                            <button class="py-2 w-36 rounded-lg bg-orange-400 text-white hover:bg-orange-600 transition duration-450">In Progress</button>
+                          </div>
+                          <div class="task_Status py-3 pb-5">
+                            <button class="py-2 w-36 rounded-lg bg-red-600 hover:bg-red-800 text-white transition duration-450">Pending</button>
+                          </div>
+                          <a href="#" onclick="closeModal('modelConfirm')"
+                            class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg transition duration-450 text-base inline-flex items-center px-3 py-2.5 text-center mr-2">
+                            Yes, I'm sure
+                          </a>
+                          <a href="#" onclick="closeModal('modelConfirm')"
+                            class="text-gray-900 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-cyan-200 border border-gray-200 font-medium inline-flex items-center rounded-lg text-base px-3 py-2.5 text-center"
+                            data-modal-toggle="delete-user-modal">
+                            No, cancel
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Assign To Button & Progress Bar -->
+          <div class="flex w-[650px] px-5 self-end justify-between items-center">
+            <div class="px-10 py-2 font-medium tracking-normal text-white rounded-md bg-stone-600">
+              Assigned to
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="w-[200px] bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+              <div class="bg-lime-600 h-2.5 rounded-full" style="width: 45%"></div>
+              <div class="text-sm font-medium text-lime-600 dark:text-white">45%</div>
+            </div>
+          </div>
+
+          <div class="py-5 rounded-lg">
+            <table class="w-full text-lg tracking-normal text-white text-center">
+              <tbody class="flex">
+                <tr>
+                  <td class=" font-normal flex w-custom_w pl-10 text-stone-300">
+                    <div class="flex items-center tracking-wide">
+                      <span class="text-base">-</span>
+                    </div>
+                    <div class="text-lg tracking-normal ml-3">
+                      Landmark Opening and Design flyer for promotion
+                    </div>
+                  </td>
+                </tr>
+                <tr class="w-[866px] flex justify-between px-5">
+                  <td class="w-36 text-start text-red-600">High</td>
+                  <td class="w-60 text-stone-300">Sudharshan</td>
+                  <td class="w-56 text-stone-300 text-lg">12/2/24</td>
+                  <td class="w-36 text-end text-orange-400">
+                    <button onclick="openModal('modelConfirm')">
+                      In Progress
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="rounded-r-lg py-5 rounded-lg">
+            <table class="w-full text-lg tracking-normal text-white text-center">
+              <tbody class="flex">
+                <tr>
+                  <td class=" font-normal flex w-custom_w pl-10 text-stone-300">
+                    <div class="flex items-center tracking-wide">
+                      <span class="text-base">-</span>
+                    </div>
+                    <div class="text-lg tracking-normal ml-3">
+                      Landmark Opening and Design flyer for promotion
+                    </div>
+                  </td>
+                </tr>
+                <tr class="w-[866px] flex justify-between px-5">
+                  <td class="w-36 text-start text-red-600">High</td>
+                  <td class="w-60 text-stone-300">Sudharshan</td>
+                  <td class="w-56 text-stone-300 text-lg">12/2/24</td>
+                  <td class="w-36 text-end text-orange-400">
+                    <button onclick="openModal('modelConfirm')">
+                      In Progress
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Delete Button -->
+          <div class="justify-center">
+            <button class="m-1" onclick="openModal('modelConfirm1')">
+              <i class="fa-sharp fa-solid fa-trash-can px-5 py-2.5 text-xl tracking-normal text-red-600 bg-white hover:text-white hover:bg-red-600 transition duration-300 rounded-md"></i>
+            </button>
+            <button id="close_button" class="m-1">
+              <i class="fa-solid fa-circle-xmark px-5 py-2.5 text-xl tracking-normal text-slate bg-white hover:text-slate hover:bg-orange-400 transition duration-300 rounded-md"></i>
+            </button>
+
+            <!-- Delete Dialog Modal -->
+            <div id="modelConfirm1" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
+              <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
+            
+                <div class="flex justify-end p-2">
+                  <button onclick="closeModal('modelConfirm1')" type="button"
+                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </button>
+                </div>
+            
+                <div class="p-6 pt-0 text-center">
+                  <svg class="w-20 h-20 text-red-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <h3 class="text-xl font-normal text-gray-500 mt-5 mb-6">Are you sure you want to delete this task?</h3>
+                  <a href="#" onclick="closeModal('modelConfirm1')"
+                    class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base inline-flex items-center px-3 py-2.5 text-center mr-2">
+                    Yes, I'm sure
+                  </a>
+                  <a href="#" onclick="closeModal('modelConfirm1')"
+                    class="text-gray-900 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-cyan-200 border border-gray-200 font-medium inline-flex items-center rounded-lg text-base px-3 py-2.5 text-center"
+                    data-modal-toggle="delete-user-modal">
+                    No, cancel
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright Footer -->
+  <footer
+    class="sticky bottom-0 bg-gray-800 h-[75px] flex w-full text-orange-400 text-center font-semibold tracking-wide justify-center items-center">
+    <i class="fa fa-copyright m-2" aria-hidden="true"></i>
+    <span>Developer On Board</span>
+  </footer>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: 'rgb(38, 57, 69)',
+            logout_red: "rgb(179, 13, 13)",
+          },
+          width: {
+            custom_w: "325px",
+            custom_w1: "810px"
+          },
+        },
+      },
+      variants: {},
+      plugins: [],
+    }
+
+    // Open Modal
+
+    window.openModal = function(modalId) {
+        document.getElementById(modalId).style.display = 'block'
+        document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
+    }
+
+    window.closeModal = function(modalId) {
+        document.getElementById(modalId).style.display = 'none'
+        document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
+    }
+
+    // Close all modals when press ESC
+    document.onkeydown = function(event) {
+        event = event || window.event;
+        if (event.keyCode === 27) {
+            document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
+            let modals = document.getElementsByClassName('modal');
+            Array.prototype.slice.call(modals).forEach(i => {
+                i.style.display = 'none'
+            })
+        }
+    };
+    // ------
+
+    document.getElementById('task-list').addEventListener('click', function () {
+      var taskList = document.getElementById('task-list');
+      var expandedSection = document.getElementById('task-list-expanded');
+      taskList.classList.toggle('hidden');
+      expandedSection.classList.toggle('hidden');
+    });
+
+    document.getElementById('close_button').addEventListener('click', function () {
+      var taskList = document.getElementById('task-list');
+      var expandedSection = document.getElementById('task-list-expanded');
+      taskList.classList.toggle('hidden');
+      expandedSection.classList.toggle('hidden');
+    });
+  </script>
+
+  <style>
+    .shadow-slate {
+      /* Apply shadow with a lighter gray color */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+  </style>
+
+</body>
+
+</html>
