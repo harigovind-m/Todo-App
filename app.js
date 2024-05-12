@@ -11,7 +11,7 @@ app.set("view engine", "ejs")
 
 //Setting public files
 app.use(express.static("public"))
-
+ 
 app.get("/", (req,res) => {
     res.render("home")
 })
