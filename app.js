@@ -9,7 +9,7 @@ console.log(`Server Listening to`,port)
 //View Engine Configuration
 app.set("view engine", "ejs")
 
-//Setting public files
+//Setting public files 
 app.use(express.static("public"))
 
 app.get("/", (req,res) => {
