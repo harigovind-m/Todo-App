@@ -79,7 +79,8 @@
               <tr>
                 <td class="font-normal flex w-[325px] pl-3">
                   <div class="text-sm tracking-normal ml-3 items-center">
-                    <input type="text" placeholder="Enter your task here" class="py-2 w-[250px] pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
+                    <input type="text" placeholder="Enter your task here"
+                      class="py-2 w-[250px] pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
                   </div>
                 </td>
               </tr>
@@ -98,7 +99,8 @@
                 </td>
                 <td class="text-end text-orange-400">
                   <div class="text-sm tracking-normal ml-3 items-center">
-                    <input type="text" placeholder="ID" class="py-2 pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
+                    <input type="text" placeholder="ID"
+                      class="py-2 pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
                   </div>
                 </td>
               </tr>
@@ -108,55 +110,63 @@
 
         <!-- Assign To Button & Progress Bar -->
         <div class="flex w-[300px] px-5 self-start justify-between items-center">
-          <button class="px-5 py-3 font-medium text-sm tracking-normal text-white rounded-md bg-stone-600 hover:bg-orange-400 hover:text-slate transition duration-300">
+          <button
+            class="px-5 py-3 font-medium text-sm tracking-normal text-white rounded-md bg-stone-600 hover:bg-orange-400 hover:text-slate transition duration-300"
+            onclick="toggleSubtaskSection()">
             Add Subtask
           </button>
 
-          <button class="px-5 py-3 font-medium text-sm tracking-normal text-white rounded-md bg-stone-600 hover:bg-orange-400 hover:text-slate transition duration-300">
-              Create Task
+          <button
+            class="px-5 py-3 font-medium text-sm tracking-normal text-white rounded-md bg-stone-600 hover:bg-orange-400 hover:text-slate transition duration-300">
+            Create Task
           </button>
         </div>
 
         <!-- Sub-Tasks -->
-        <div class="flex flex-col flex-1 rounded-r-lg py-5 rounded-lg">
-          <table class="w-full text-lg tracking-normal text-white text-center">
-            <tbody class="flex">
-              <tr>
-                <td class="font-normal flex justify-end w-[325px] pl-3">
-                  <div class="text-sm tracking-normal ml-3 items-center">
-                    <input type="text" placeholder="Enter your subtask here" class="py-2 w-[250px] pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
-                  </div>
-                </td>
-              </tr>
-              <tr class="w-[866px] flex justify-around px-5">
-                <td class="w-40 text-red-600">
-                  <button onclick="openModal('modelConfirm')">
-                    High
-                  </button>
-
-                </td>
-                <td class="w-40">Me</td>
-                <td class="">
-                  <div class="text-sm tracking-normal ml-3 items-center">
-                    <input type="date" placeholder="" class="py-2 pl-2 bg-gray-800 border-b border-gray-300 rounded-lg">
-                  </div>
-                </td>
-                <td class="text-end text-orange-400">
-                  <div class="text-sm tracking-normal ml-3 items-center">
-                    <input type="text" placeholder="ID" class="py-2 pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div id="subtaskSection" class="hidden">
+          <div class="flex flex-col flex-1 rounded-r-lg py-5 rounded-lg">
+            <table class="w-full text-lg tracking-normal text-white text-center">
+              <tbody class="flex">
+                <tr>
+                  <td class="font-normal flex justify-end w-[325px] pl-3">
+                    <div class="text-sm tracking-normal ml-3 items-center">
+                      <input type="text" placeholder="Enter your subtask here"
+                        class="py-2 w-[250px] pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
+                    </div>
+                  </td>
+                </tr>
+                <tr class="w-[866px] flex justify-around px-5">
+                  <td class="w-40 text-red-600">
+                    <button onclick="openModal('modelConfirm')">
+                      High
+                    </button>
+  
+                  </td>
+                  <td class="w-40">Me</td>
+                  <td class="">
+                    <div class="text-sm tracking-normal ml-3 items-center">
+                      <input type="date" placeholder="" class="py-2 pl-2 bg-gray-800 border-b border-gray-300 rounded-lg">
+                    </div>
+                  </td>
+                  <td class="text-end text-orange-400">
+                    <div class="text-sm tracking-normal ml-3 items-center">
+                      <input type="text" placeholder="ID"
+                        class="py-2 pl-2 bg-gray-800 border-b border-gray-300 rounded-lg ">
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
       </div>
 
       <!-- Dialog Box -->
-      <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
+      <div id="modelConfirm"
+        class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
         <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
-      
+
           <!-- Close button -->
           <div class="flex justify-end p-2 bg-gray-900">
             <button onclick="closeModal('modelConfirm')" type="button"
@@ -168,7 +178,7 @@
               </svg>
             </button>
           </div>
-      
+
           <!-- Task Status Menu -->
           <div class="p-6 py-0 text-center bg-slate">
             <div class="task_Status py-3">
@@ -205,31 +215,41 @@
 
     //Open Modal
 
-    window.openModal = function(modalId) {
-        document.getElementById(modalId).style.display = 'block'
-        document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
+    window.openModal = function (modalId) {
+      document.getElementById(modalId).style.display = 'block'
+      document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
     }
 
-    window.closeModal = function(modalId) {
-        document.getElementById(modalId).style.display = 'none'
-        document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
+    window.closeModal = function (modalId) {
+      document.getElementById(modalId).style.display = 'none'
+      document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
     }
 
     // Close all modals when press ESC
-    document.onkeydown = function(event) {
-        event = event || window.event;
-        if (event.keyCode === 27) {
-            document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
-            let modals = document.getElementsByClassName('modal');
-            Array.prototype.slice.call(modals).forEach(i => {
-                i.style.display = 'none'
-            })
-        }
+    document.onkeydown = function (event) {
+      event = event || window.event;
+      if (event.keyCode === 27) {
+        document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
+        let modals = document.getElementsByClassName('modal');
+        Array.prototype.slice.call(modals).forEach(i => {
+          i.style.display = 'none'
+        })
+      }
     };
 
     // ----
+    function toggleSubtaskSection() {
+      const subtaskSection = document.getElementById('subtaskSection');
+      if (subtaskSection.classList.contains('hidden')) {
+        subtaskSection.classList.remove('hidden');
+        subtaskSection.classList.add('flex');
+      } else {
+        subtaskSection.classList.remove('flex');
+        subtaskSection.classList.add('hidden');
+      }
+    }
 
-    
+
     tailwind.config = {
       theme: {
         extend: {
