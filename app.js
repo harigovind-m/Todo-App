@@ -14,7 +14,7 @@ app.use(express.static("public"))
 
 app.get("/", (req,res) => {
     res.render("home")
-})
+}) 
 
 app.get("/create-task", (req,res) => {
     res.render("createTask")
