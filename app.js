@@ -19,3 +19,7 @@ app.get("/", (req,res) => {
 app.get("/create-task", (req,res) => {
     res.render("createTask")
 })
+
+app.use(" ", (req,res) => {
+    res.render("404")
+})

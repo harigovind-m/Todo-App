@@ -1,41 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo App</title>
-  <link rel="shortcut icon" href="//rptech.qa/cdn/shop/files/favicon_32x32.png?v=1657849654" type="image/png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/3280a7d2eb.js" crossorigin="anonymous"></script>
-</head>
-
-<body class="bg-slate min-h-screen">
-
-  <div class="flex flex-col min-h-screen">
-
-    <!-- Navbar -->
-    <div
-      class="flex justify-center items-center px-16 py-4 w-full text-3xl font-semibold max-md:font-medium text-orange-400 bg-gray-800 max-md:px-5 max-md:max-w-full">
-      <div
-        class="navbar-content flex gap-5 justify-between px-0.5 w-full max-w-[1214px] max-md:flex-wrap max-md:max-w-full">
-        <div class="navbar-logo flex-auto">RP Tech</div>
-        <div class="navbar-heading flex-auto flex-shrink-0">Todo List</div>
-        <div class="navbar-profile flex gap-5 justify-center text-center text-xl text-white whitespace-nowrap">
-          <div
-            class="navbar-user flex flex-col font-extralight text-sm hover:cursor-pointer transition duration-450 hover:text-green-400">
-            <span>G0866</span>
-            <span class="mt-1">Akhil Raj</span>
-          </div>
-          <div class="logout_icon pt-1">
-            <i class="fa-solid fa-arrow-right-from-bracket pt-2 w-9 h-9 pl-1 rounded-md transition duration-300 hover:cursor-pointer bg-white text-red-600 hover:text-white hover:bg-red-600"
-              onclick="logout_Function()"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-
+<%- include('partials/header.ejs') %>
 
     <!-- Page -->
     <div class="container-main flex flex-col self-center px-5 mt-8 w-full max-w-[1227px] max-md:max-w-full">
