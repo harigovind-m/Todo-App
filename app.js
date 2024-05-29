@@ -20,6 +20,6 @@ app.get("/create-task", (req,res) => {
     res.render("createTask")
 })
 
-app.use("  ", (req,res) => {
-    res.render("404")
+app.use((req,res) => {
+    res.statusCode(404).render("404")
 })
